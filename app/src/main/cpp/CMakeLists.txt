@@ -5,17 +5,33 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
+
 set(var 123)
-message("var: ${var}")
+message("var = ${var}")
 
 set(list_var 1 2 3 4 5)
-message("list_var: ${list_var}")
+message("list_var:${list_var}")
+
+set(a "")
+while (NOT a STREQUAL "xxx")
+    set(a "${a}x")
+    message("a = ${a}")
+endwhile ()
+
+# for循环遍历
+foreach (item 1 2 3)
+    message("item = ${item}")
+endforeach (item)
+
+foreach (item RANGE 3)
+    message("item = ${item}")
+endforeach (item)
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-aux_source_directory(. DIR_SRCS)
 add_library( # Sets the name of the library.
         native-lib
 
@@ -23,7 +39,7 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        ${DIR_SRCS})
+        native-lib.cpp)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by

@@ -1,6 +1,5 @@
 build
-.externalNativeBuild
-*.iml
-src/test
-src/androidTest
 .cxx
+src/androidTest
+src/test
+*.iml
