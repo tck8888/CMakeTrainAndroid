@@ -27,6 +27,31 @@ foreach (item RANGE 3)
     message("item = ${item}")
 endforeach (item)
 
+foreach (item RANGE 0 7 3)
+    message("item = ${item}")
+endforeach (RANGE)
+
+
+foreach (item IN LISTS list_var)
+    message("item = ${item}")
+endforeach (item)
+
+
+# 自定义函数命令
+function(func x y z)
+    message("call function func")
+    message("x = ${x}")
+    message("y = ${y}")
+    message("z = ${z}")
+    message("ARGC = ${ARGC}")
+    message("ARGV = ${ARGV}")
+    message("ARGV0 = ${ARGV0}")
+    message("ARGV1 = ${ARGV1}")
+    message("ARGV2 = ${ARGV2}")
+    message("ARGV3 = ${ARGV3}")
+endfunction(func)
+
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
