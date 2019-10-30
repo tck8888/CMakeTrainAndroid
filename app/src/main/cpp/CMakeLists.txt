@@ -62,6 +62,11 @@ endmacro(ma)
 
 ma("hello" "world")
 
+# 变量的作用域
+
+
+aux_source_directory(. DIR_SRCS)
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
