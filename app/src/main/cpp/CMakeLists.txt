@@ -51,6 +51,16 @@ function(func x y z)
     message("ARGV3 = ${ARGV3}")
 endfunction(func)
 
+func(1 2 3)
+
+# 自定义宏命令
+
+macro(ma a b)
+    message("a = ${a}")
+    message("b = ${b}")
+endmacro(ma)
+
+ma("hello" "world")
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
